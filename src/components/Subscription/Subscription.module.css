@@ -1,0 +1,12 @@
+.subscription {
+  padding: 20px 44px 16px;
+  font-weight: 400;
+  line-height: 1.63;
+  text-align: center;
+  background-color: hsl(248, 32%, 49%);
+  border-radius: 10px;
+  box-shadow: 0 8px 0 0 hsla(0, 0%, 0%, .15);
+}
+.subscription__textBold {
+  font-weight: 600;
+}
