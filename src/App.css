@@ -1,0 +1,9 @@
+#root {
+  min-height: 100vh;
+  padding: 92px 24px 68px;
+  background-color: hsl(0, 100%, 74%);
+  background-image: url(./assets/images/bg-intro-mobile.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
