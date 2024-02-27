@@ -1,0 +1,15 @@
+.input {
+  width: 100%;
+  padding: 20px 18px 16.748px;
+  font-weight: 600;
+  font-size: .9rem;
+  color: var(--clr-dark-blue);
+  background-color: hsl(0, 0%, 100%);
+  border: 1px solid hsl(0, 0%, 87%);
+  border-radius: 5px;
+  caret-color: var(--clr-blue);
+}
+.input:focus {
+  outline: 0;
+  border: 1px solid var(--clr-blue);
+}
