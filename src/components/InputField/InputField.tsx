@@ -11,11 +11,14 @@ type InputFieldProps = {
 
 function InputField(props: InputFieldProps) {
   const { className, type, name, value, placeholder, onChange } = props;
-  const classes = `${className} ${style.input}`;
 
   return (
-    <input className={classes} type={type} name={name} value={value}
-           placeholder={placeholder} onChange={onChange} />
+    <div className={`${style.wrapper} ${className} ${style.warning}`}>
+      <input className={`${style.wrapper__input} ${style.warning}`} type={type} name={name} value={value}
+            placeholder={placeholder} onChange={onChange} />
+      <span className={`${style.wrapper__iconWarning} ${style.warning}`}></span>
+      <p className={`${style.wrapper__warningMessage} ${style.warning}`}>First Name cannot be empty</p>
+    </div>
   );
 }
 
