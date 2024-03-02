@@ -1,4 +1,5 @@
 .header {
+  width: 327px;
   margin-bottom: 61px;
   text-align: center;
 }
@@ -12,4 +13,22 @@
 .header__desc {
   line-height: 1.64;
   opacity: .85;
+}
+
+@media (min-width: 768px) {
+  .header {
+    text-align: left;
+  }
+}
+
+@media (min-width: 1200px) {
+  .header {
+    width: 500px;
+    margin-bottom: 0;
+  }
+  .header__title {
+    margin-bottom: 29px;
+    font-size: 3.08rem;
+    line-height: 1.117;
+  }
 }

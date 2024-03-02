@@ -107,3 +107,19 @@
 .form__link:active {
   color: hsl(0, 100%, 84%);
 }
+
+@media (min-width: 1200px) {
+  .form {
+    padding: 40px;
+  }
+  .form__wrapper {
+    margin-bottom: 20px;
+  }
+  .form__input {
+    padding: 20px 31px 16.748px;
+  }
+  .form__button {
+    margin-bottom: 13px;
+    text-align: center;
+  }
+}

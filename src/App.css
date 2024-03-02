@@ -1,4 +1,8 @@
 #root {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   min-height: 100vh;
   padding: 92px 24px 68px;
   background-color: var(--clr-red);
@@ -6,4 +10,19 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+}
+
+@media (min-width: 768px) {
+  #root {
+    flex-direction: row;
+    column-gap: 66px;
+    background-image: url(./assets/images/bg-intro-desktop.png);
+  }
+}
+
+@media (min-width: 1200px) {
+  #root {
+    column-gap: 72px;
+    padding: 0;
+  }
 }
