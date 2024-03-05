@@ -34,14 +34,18 @@ function Form() {
     password: /^[\w!";#$%&'()*+,-.\/:<=>?@\[\]^`{|}~]{6,30}$/
   };
 
-  useEffect(() => firstNameStatus.message ||
-                  lastNameStatus.message ||
-                  emailStatus.message ||
-                  passwordStatus.message ?
+  useEffect(() => firstNameStatus.warning ||
+                  lastNameStatus.warning ||
+                  emailStatus.warning ||
+                  passwordStatus.warning ?
                     setFormValid(false) : setFormValid(true), [
+                      firstNameStatus.warning,
                       firstNameStatus.message,
+                      lastNameStatus.warning,
                       lastNameStatus.message,
+                      emailStatus.warning,
                       emailStatus.message,
+                      passwordStatus.warning,
                       passwordStatus.message
                     ]);
 
@@ -221,40 +225,40 @@ function Form() {
         <input className={`${style.form__input} ${firstNameStatus.warning ? style.warning : ''}`}
                type='text' name='firstName' value={inputValue.firstName} placeholder={placeholder.firstName}
                onChange={firstNameHandler} onBlur={blurHandler} />
-        <span className={`${style.form__iconWarning} ${firstNameStatus.warning ? style.warning : ''}`}></span>
-        <p className={`${style.form__warningMessage} ${firstNameStatus.warning ? style.warning : ''}`}>
+        {firstNameStatus.warning && <span className={style.form__iconWarning}></span>}
+        {(firstNameStatus.warning && firstNameStatus.message) && <p className={style.form__warningMessage}>
           {firstNameStatus.message}
-        </p>
+        </p>}
       </div>
 
       <div className={`${style.form__wrapper} ${lastNameStatus.warning ? style.warning : ''}`}>
         <input className={`${style.form__input} ${lastNameStatus.warning ? style.warning : ''}`}
                type='text' name='lastName' value={inputValue.lastName} placeholder={placeholder.lastName}
                onChange={lastNameHandler} onBlur={blurHandler} />
-        <span className={`${style.form__iconWarning} ${lastNameStatus.warning ? style.warning : ''}`}></span>
-        <p className={`${style.form__warningMessage} ${lastNameStatus.warning ? style.warning : ''}`}>
+        {lastNameStatus.warning && <span className={style.form__iconWarning}></span>}
+        {(lastNameStatus.warning && lastNameStatus.message) && <p className={style.form__warningMessage}>
           {lastNameStatus.message}
-        </p>
+        </p>}
       </div>
 
       <div className={`${style.form__wrapper} ${emailStatus.warning ? style.warning : ''}`}>
         <input className={`${style.form__input} ${emailStatus.warning ? style.warning : ''}`}
                type='email' name='emailAddress' value={inputValue.emailAddress} placeholder={placeholder.emailAddress}
                onChange={emailHandler} onBlur={blurHandler} />
-        <span className={`${style.form__iconWarning} ${emailStatus.warning ? style.warning : ''}`}></span>
-        <p className={`${style.form__warningMessage} ${emailStatus.warning ? style.warning : ''}`}>
+        {emailStatus.warning && <span className={style.form__iconWarning}></span>}
+        {(emailStatus.warning && emailStatus.message) && <p className={style.form__warningMessage}>
           {emailStatus.message}
-        </p>
+        </p>}
       </div>
 
       <div className={`${style.form__wrapper} ${passwordStatus.warning ? style.warning : ''}`}>
         <input className={`${style.form__input} ${passwordStatus.warning ? style.warning : ''}`}
                type='password' name='password' value={inputValue.password} placeholder={placeholder.password}
                onChange={passwordHandler} onBlur={blurHandler} />
-        <span className={`${style.form__iconWarning} ${passwordStatus.warning ? style.warning : ''}`}></span>
-        <p className={`${style.form__warningMessage} ${passwordStatus.warning ? style.warning : ''}`}>
+        {passwordStatus.warning && <span className={style.form__iconWarning}></span>}
+        {(passwordStatus.warning && passwordStatus.message) && <p className={style.form__warningMessage}>
           {passwordStatus.message}
-        </p>
+        </p>}
       </div>
 
       <button className={`${style.form__button} ${!formValid ? style.disabled : ''}`} type='submit'

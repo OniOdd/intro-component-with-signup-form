@@ -37,7 +37,7 @@
   top: 50%;
   transform: translateY(-50%);
   z-index: 2;
-  display: none;
+  display: block;
   width: 24px;
   height: 24px;
   background-image: url(../../assets/images/icon-error.svg);
@@ -45,21 +45,15 @@
   background-position: center;
   background-size: contain;
 }
-.form__iconWarning.warning {
-  display: block;
-}
 .form__warningMessage {
   position: absolute;
   bottom: -22px;
   right: 2px;
   z-index: 2;
-  display: none;
+  display: block;
   font-size: .6632rem;
   font-style: italic;
   color: var(--clr-red);
-}
-.form__warningMessage.warning {
-  display: block;
 }
 .form__button {
   margin-bottom: 9px;
